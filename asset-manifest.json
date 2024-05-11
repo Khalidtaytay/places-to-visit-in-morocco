@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/places-to-visit-in-morocco/static/css/main.921b2e0c.css",
+    "main.js": "/places-to-visit-in-morocco/static/js/main.a98ac159.js",
+    "static/js/453.fd7c98bb.chunk.js": "/places-to-visit-in-morocco/static/js/453.fd7c98bb.chunk.js",
+    "index.html": "/places-to-visit-in-morocco/index.html",
+    "main.921b2e0c.css.map": "/places-to-visit-in-morocco/static/css/main.921b2e0c.css.map",
+    "main.a98ac159.js.map": "/places-to-visit-in-morocco/static/js/main.a98ac159.js.map",
+    "453.fd7c98bb.chunk.js.map": "/places-to-visit-in-morocco/static/js/453.fd7c98bb.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.921b2e0c.css",
+    "static/js/main.a98ac159.js"
+  ]
+}
