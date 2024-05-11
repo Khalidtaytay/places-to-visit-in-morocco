@@ -1,38 +1,700 @@
-.App {
-  text-align: center;
+*{
+    box-sizing: border-box;
+    font-family: "Noto Sans Display", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+:root {
+    font-variation-settings:"wdth" 100;
+    --Nav-bar-color : rgba(169, 171, 173, 0.5);
+    --Nav-Second-text-color : rgba(255, 255, 255, 0.5);
+}
+body{
+    padding: 0;
+    margin: 0;
+}
+/* App */
+
+.App{
+    background: #F8F8FA;
+    padding-inline: 5%;
+    padding-top: 10%;
+    position: relative; 
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Home */
+.Home {
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    height: 90vh; /* Corrected unit */
+    width: 100%;
+    color: white;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.logo{
+    cursor: pointer;
+    font-family: "Josefin Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+.Home-title{
+    font-size: 70px;
+    font-family: "Josefin Sans", sans-serif;
+    font-style: normal;
+}
+.NavBar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.Nav-menu {
+    background-color: var(--Nav-bar-color);
+    backdrop-filter: blur(2px);
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 25px;
+    flex-wrap: wrap;
+    width: 50%;
+    height: 35px;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    color: var(--Nav-Second-text-color);
+}
+.Nav-menu-mobile{
+    background-color:rgba(84, 84, 84, 0.5);
+    backdrop-filter: blur(2px);
+    color: var(--Nav-Second-text-color);
+    list-style: none;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    inset: 0;
+    width: 100%;
+    height: 100dvh;
+    margin: 0;
+    padding: 0;
+    z-index: 100;
+    animation: moveNavBar 1s ease-in-out forwards;
+    color: white;
+}
+@keyframes moveNavBar{
+    from{
+        transform: translateX(100%);
+    }to{
+        transform: translateX(0%);
+    }
+}
+#X{
+    z-index: 101;
+    position: relative;
+    color: white;
+}
+.Nav-menu>li:first-child{
+    color: white;
+}
+.Nav-menu li{
+    transition: 0.25s;
+    cursor: pointer;
+}
+.Nav-menu-mobile li{
+    transition: 0.25s;
+    cursor: pointer;
+}
+.Nav-menu li:hover{
+    color: white;
+}
+.Nav-menu-mobile li:hover{
+    color: gray;
+}
+
+.Nav-loging {
+    width: 170px;
+    height: 35px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+.Nav-loging > ul:first-child {
+    background: var(--Nav-bar-color);
+    backdrop-filter: blur(2px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 70px;
+    height: 35px;
+    list-style: none;
+    border-radius: 25px;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+}
+
+.Nav-loging > ul:last-child {
+    cursor: pointer;
+    background: white;
+    align-items: center;
+    border-radius: 25px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    width: 80px;
+    margin: 0;
+    padding: 0;
+    color: black;
+}
+.Nav-loging ul>li:first-child{
+    padding-inline: 5px;
+    color: var(--Nav-Second-text-color);
+    transition: 0.25s;
+}
+.Nav-loging ul>li:first-child:hover{
+    color: white;
+}
+.Nav-loging ul>li:last-child{
+    background: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    color: black;
+}
+
+.SearchArea{
+    background: var(--Nav-bar-color);
+    backdrop-filter: blur(2px);
+    width: 50%;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline:1% ;
+    border-radius: 25px;
+    
+}
+.SearchArea button{
+    background: #FFFFFF;
+    outline: none;
+    border: none;
+    border-radius: 25px;
+    height: 30px;
+    width: 100px;
+    cursor: pointer;
+}
+.Home-title{
+    width: 90%;
+    text-align: center;
+}
+input{
+    background: transparent;
+    width: 85%;
+    outline: none;
+    border: none;
+    color: white;
+}
+/* Login */
+.Login{
+    background: var(--Nav-bar-color);
+    backdrop-filter: blur(10px);
+    width: 400px;
+    height: 500px;
+    position: fixed;
+    top: 0;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    z-index: 99;
+    border-radius: 10px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
+    
+}
+.fa-xmark{
+    position: absolute;
+    top: 2%;
+    right: 2%;
+    cursor: pointer;
+    color: #dbdbdb;
+}
+.inputs{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.inputs input{
+    background: var(--Nav-Second-text-color);
+    margin: 5%;
+    height: 40px;
+    border-radius: 25px;
+    padding-inline: 2%;
+}
+.Login button { 
+    min-width: 150px;
+    height: 35px;
+    color: #191515;
+    background: white;
+    border-radius: 25px;
+    cursor: pointer;
+    border: none;
+}
+/* CitySection */
+
+.cities-container{
+    display: grid;
+    grid-template-columns:1fr 1fr 1fr;
+    width: 100%;
+    gap: 1.5%;
+    padding-inline: 5%;
+}
+.City {
+    background-size: cover !important; 
+    background-repeat: no-repeat !important; 
+    background-position: center !important; 
+    cursor: pointer;
+    min-width: 300px;
+    height: 200px;
+    border-radius: 15px;
+    position: relative;
+    padding: 5%;
+}
+
+.cities-container>div:nth-child(1){
+    grid-column: 2/4;
+    grid-row: 2/3;
+}
+.cities-container>div:nth-child(4){
+    grid-column: 1/3;
+    grid-row: 1/2;
+}
+
+.cityIamge{
+    border-radius: 20px ;
+    cursor: pointer;
+    width: 400px;
+}
+.name{
+    position: absolute;
+    z-index: 11;
+    bottom: 15%;
+    color: white;
+    display: none;
+}
+.titleCity{
+    display: none;
+    position: absolute;
+    z-index: 11;
+    bottom: 5%;
+    color: white;
+}
+.City:hover .name{
+    display: block;
+}
+.City:hover .titleCity{
+    display: block;
+}
+/* RandomCity */
+.RandomCity{
+    display: flex;
+    position: relative;
+    justify-content: center;
+    padding-inline: 5%;
+    width: 100%;
+}
+.RandomCity-background{
+    min-width: 350px;
+    height: 500px;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    border-radius: 25px !important;
+}
+.RandomCity-informations{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.indo-random-info{
+    width: 500px;
+    min-height: 80px;
+    margin-block: 1%;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    list-style: none;
+    padding-inline: 5%;
+}
+.RandomCity-informations > li:nth-child(1){
+    background: white;
+    box-shadow: 0pc 10px 50px rgba(189, 189, 189, 0.25);
+}
+.indo-random-info li {
+    padding-inline: 5%;
+}
+/* ReviewCitys */
+.ReviewCitys{
+    padding: 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.ReviewCitys-Cityes{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5%;
+    padding: 5%;
+    width: 100%;
+    
+}
+.ReviewCitys-Cityes-CityItem{
+    min-width: 250px !important;
+    height: 400px !important;
+    border-radius: 15px;
+    position: relative;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+}
+
+.review-infos{
+    background:  rgba(148, 145, 143, 0.575);
+    position: absolute;
+    bottom: 5%;
+    width: 90%;
+    left: 5%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border-radius: 5px;
+    height: 15%;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+span {
+    background: transparent;
+}
+.ReviewCitysAll{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2%;
+}
+.ReviewCitysAll button {
+    min-width: 150px;
+    height: 35px;
+    color: white;
+    background: #191515;
+    border-radius: 25px;
+    cursor: pointer;
+   
+}
+
+/* Footre */
+.Footre{
+    color: white;
+    background: #191515;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+/* counters */
+.counters{
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    position: absolute;
+    bottom: -80px;
+    width: 100%;
+    z-index: 11;
+    padding: 0;
+}
+.counters li {
+    background: #FFFFFF;
+    color: #191515;
+    width: 30%;
+    min-height: 50px;
+    display: block;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0px 10px 40px rgba(121, 121, 121, 0.511);
+}
+#K{
+    font-size: 30px;
+    font-weight: bold;
+}
+/* selectedCity */
+.selectedCity{
+    position: fixed;
+    background: white;
+    box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.45);
+    width: 80%;
+    height: 80%;
+    margin: auto;
+    z-index: 99999999999;
+    inset: 0;
+    border-radius: 10px;
+    padding-inline: 2%;
+    padding-bottom: 2%;
+    overflow: auto;  
+    animation: selectedCityAnimation 0.15s ease-in-out;
+    font-size: 13px;
+}
+@keyframes selectedCityAnimation{
+    from{
+        opacity: 0;
+        scale: 0;
+    }
+    to{
+        opacity: 1;
+        scale: 1;
+    }
+}
+
+.X-container{
+    background: rgba(255, 255, 255, 0.50);
+    position: fixed;
+    left: 90%;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .25 s;
+}
+.X-container:hover{
+    background: rgba(176, 176, 176, 0.5);
+}
+.h1h2{
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    gap: 10px;
+    font-family: "Josefin Sans", sans-serif;
+    font-style: normal;
+}
+.h1h2list { 
+    list-style:none ;
+    gap: 10px;
+}
+i {
+    margin-inline: 10px;
+}
+
+.image-infos{
+    display: flex;
+    width: 100%;
+}
+.selectedCity-infos{
+    width: 50%;
+    padding: 2%;
+}
+.selectedCity-image{
+    width: 50%;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    border-radius: 15px;
+
+}
+.indo-info{
+    background: transparent;
+    font-weight: bold;
+}
+/* AllCitys */
+
+.AllCities{
+    position: relative;
+    background: white;
+    width: 100%;
+    height: 100dvh;
+    inset: 0;
+    position: fixed;
+    overflow: auto;
+    z-index: 9999;
+    display: grid;
+    grid-template-columns:1fr 1fr 1fr;
+    gap: 1.5%;
+    padding: 2%;
+    animation: AllCityAnimation 0.15s ease-in-out;
+}
+@keyframes AllCityAnimation{
+    from{
+        opacity: 0;
+        scale: 0;
+    }
+    to{
+        opacity: 1;
+        scale: 1;
+    }
+}
+.X-container2{
+    z-index: 99999;
+    position: fixed;
+    top: 0;
+    right: 1%;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .25 s;
+}
+.X-container2:hover{
+    background: rgba(176, 176, 176, 0.5);
+}
+
+.City2{
+    width: 100%;
+    height: 200px;
+    border-radius: 10px;
+    cursor: pointer;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    background-position: center !important;
+    position: relative;
+    padding: 2%;
+}
+.name2{
+    display: none;
+    color: white;
+    position: absolute;
+    bottom: 15%;
+}
+.titleCity2{
+    display: none;
+    color: white;
+    position: absolute;
+    bottom: 0;
+}
+.City2:hover .name2{
+    display: block;
+}
+.City2:hover .titleCity2{
+    display: block;
+}
+/* display grid for AllCities page  */
+
+.AllCities>div:nth-child(1){
+    grid-column: 2/4;
+    grid-row: 2/3;
+}
+.AllCities>div:nth-child(4){
+    grid-column: 1/3;
+    grid-row: 1/2;
+}
+
+.AllCities>div:nth-child(5){
+    grid-column: 1/3;
+    grid-row: 4/5;
+}
+.AllCities>div:nth-child(8){
+    grid-column: 2/4;
+    grid-row: 5/6;
+}
+.AllCities>div:nth-child(10){
+    grid-column: 1/3;
+    grid-row: 7/8;
+}
+
+@media (max-width: 985px){
+  .RandomCity{
+    flex-direction: column;
+  }
+  .indo-random-info{
+    width: 100%;
+  }
+  .City{
+    min-width: 200px;
+  }
+  .image-infos{
+      flex-direction: column;
+  }
+  .selectedCity-image{
+      width: 100%;
+      height: 300px;
+  }
+  .selectedCity-infos{
+      width: 100%;
+  }
+  .h1h2 h1{
+      font-size: 20px;
   }
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+@media (max-width: 692px){
+    .h1h2 h1{
+        font-size: 15px;
+    }
+    .Nav-menu{
+        display: none;
+    }
+    .selectedCity{
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+    }
 }
-
-.App-link {
-  color: #61dafb;
+@media (max-width: 626px){
+    .City{
+        min-width: 100px;
+        height: 110px;
+        border-radius: 10px;
+      }
+    .CitySection{
+        padding-top: 5%;
+    }
+    .Home-title{
+        font-size: 50px;
+    }
+    .Home{
+        height: 70dvh;
+    }
+    .SearchArea{
+        width: 80%;
+    }
+    
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+@media (max-width: 400px){
+    .RandomCity-background{
+        min-width: 100px;
+    }
+}
+@media (max-width: 369px){
+    .Nav-loging{
+        display: none;
+    }
 }
