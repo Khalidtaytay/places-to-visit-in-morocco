@@ -9,7 +9,7 @@ export default function Login({setLogin}){
              <div className="inputs">
               <input type="text" placeholder='Full Name' />
               <input type="text" placeholder='Email' />
-              <input type="text" placeholder='Password' />
+              <input type="password" placeholder='Password' />
             </div>
             <i onClick={()=>setLogin(false)} class="fa-solid fa-xmark"></i>
             <button onClick={inpt}>Login</button>

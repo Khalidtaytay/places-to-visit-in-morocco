@@ -35,6 +35,7 @@ import { useEffect, useState } from 'react';
                 <div>
                 {!menu?<i class="fa-solid fa-bars" onClick={()=>setMenu(true)} ></i>:<i onClick={()=>setMenu(false)} id='X' class="fa-solid fa-xmark"></i>}
                     {menu&& <ul className=' Nav-menu-mobile'>
+                            <li onClick={()=>setLogin(true)}>Login</li>
                             <li>Home</li>
                             <li>Services</li>
                             <li>Tour</li>
